@@ -1,0 +1,204 @@
+------------- STRUCUTRE DU PROJET -------------------
+
+Soit / le directoire principal du projet (root)
+Prenons Euler comme exemple de nom de projet
+Donc Euler/ est le dossier principal du projet.
+
+
+
+---------------- 1) FICHIERS DU PROJETS --------------
+
+Fichiers du projets : Il s'agit des fichiers mis directement dans le directoire principale du projet
+
+Euler/README.MD : Un fichier qui explique le projet, comment l'utiliser et le contenu des directoires/sous-directoires
+Euler/LICENCE.txt : Indique la licence utilisée pour distribuer le logiciel (génerée automatiquement par Github selon la license choisie)
+Euler/.gitignore : Permet d'ignorer les fichiers temporaires/pas necessaires au projet quand un commit est effectué de votre machine locale
+Euler/Makefile : Compilation automatique du projet
+Euler/INSTALL.txt (ou INSTALL.sh) : Indique comment installer le logiciel
+
+
+
+----------------- 2) Euler/build/  ------------------
+
+Ce dossier contient tous les fichiers temporaires générés par la compilation (extension .o)
+
+Ce dossier se trouve seulement sur votre disque local, il ne faut pas le commit sur github .
+
+Chaque utilisateur aura des fichiers temporaires de compilation différents et donc ce n'est pas
+un répertoire nécessaire pour le fonctionnement du projet.
+
+Rajouter la ligne "build/" dans votre fichier .gitignore pour ignorer ce dossier.
+
+
+
+----------------- 3) Euler/bin/ -----------------------
+
+
+Contient les fichiers exécutables du projet, après compilation.
+
+
+
+----------------- 4) Euler/src/   --------------------
+
+Ce dossier contient le code source de votre programme.
+
+Une approche "Merged Header Placement" est adoptée, C-à-d vos deux fichiers .hpp et .cpp doivent figurer
+dans le mème dossier : 
+
+Euler
+|
+|
+|
+|----- src/        
+|     |
+|     |---- solvers/
+|     		|
+|		|-----code.cpp
+|		|-----code.hpp
+       
+
+Il est préférable de regrouper vos fichiers sous plusieurs dossiers dans src/
+Par exemple, créer un dossier solvers qui contient le code pour le solveur, un
+dossier gui pour le code de l'interface ... et créer des sous-directoire si nécessaire aussi : 
+
+Euler
+|
+|
+|
+|----- src/        
+|     |
+|     |---- solvers/
+|     |	|
+|     |	|----- eulerexplicit
+|     |	|	|----- code.cpp
+|     |	|	|----- code.hpp
+|     |	|
+|     |	|----- jst       
+|     |	|	|----- code.cpp
+|     |	|	|----- code.hpp
+|     |
+|     |----- gui/
+|     |        |
+|     |        |----- code.cpp
+|     |        |----- code.hpp
+|     |
+|     |----- mesh/
+|     |        |
+|     |        |----- code.cpp
+|     |        |----- code.hpp
+		*
+		*
+		*
+
+Garder les noms des dossiers toujours en letttres minuscules
+
+
+----------------- 5) Euler/test/   --------------------
+
+Ce dossier contient les tests unitaires pour les différents fonctions, méthodes, modules...
+
+Il doit etre configuer avec le meme arbre que celui du dossier src/
+
+
+Rajouter un fichier CMakelists.txt au besoin pour automatiser les tests.
+
+Exemple :
+
+Euler
+|
+|
+|
+|----- test/        
+|     |
+|     |---- CMakelists.txt
+|     |
+|     |---- solvers/
+|     |	
+|     |
+|     |----- gui/
+|     |        
+|     |
+|     |----- mesh/
+
+
+
+--------------- 6) Euler/extern/  -----------------------
+
+Contient les librairies (dépendances) externes utilisées par le logiciel
+Chaque sous directoire du dossier extern doit etre nommé selon le nom de la libraire.
+Exemple pour deux libraires externes (Eigen et Qt) :
+
+Euler
+|
+|
+|----- extern/
+|       |
+|       |----- Eigen/
+|       |	
+|       |
+|       |----- Qt/
+
+
+
+
+--------------- 7) Euler/docs/ -----------------------
+
+Contient Toute note,documentation... jugée nécessaire pour l'utilisateur.
+
+Il est possible de utiliser doxygen qui automatise la documentation des fonctions,classes ... En prenant les commentaires
+ecrits dans le code.
+
+
+--------------- 8) Euler/examples/ -------------------
+
+Ce dossier contient des "TestCase" que l'utilisateur pourrait rouler pour vérifier
+le fonctionnement du programme, comprendre les commandes du logiciel... Sans avoir besoin de préparer
+une étude de cas par lui-meme.
+
+
+
+
+
+Voici la strucutre générale du projet
+
+
+Euler
+  |
+  |----- LICENCE
+  |
+  |----- Makefile
+  |
+  |-----.gitignore
+  |
+  |----- README 
+  |
+  |----- INSTALL
+  |
+  |
+  |----- build/
+  |
+  |
+  |----- examples/				
+  |
+  |
+  |----- docs/
+  |	   
+  |
+  |----- bin/        
+  |
+  |
+  |----- src/        
+  |     
+  |
+  |----- extern/
+  |            
+  |
+  |----- tests/
+  
+  
+  
+  
+  
+  
+  
+  
