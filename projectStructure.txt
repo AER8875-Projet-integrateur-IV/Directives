@@ -68,14 +68,14 @@ Euler
 |----- src/        
 |     |
 |     |---- solvers/
-|     |	|
-|     |	|----- eulerexplicit
-|     |	|	|----- code.cpp
-|     |	|	|----- code.hpp
-|     |	|
-|     |	|----- jst       
-|     |	|	|----- code.cpp
-|     |	|	|----- code.hpp
+|     |		|
+|     |		|----- eulerexplicit
+|     |		|	|----- code.cpp
+|     |		|	|----- code.hpp
+|     |		|
+|     |		|----- jst       
+|     |		|	|----- code.cpp
+|     |		|	|----- code.hpp
 |     |
 |     |----- gui/
 |     |        |
