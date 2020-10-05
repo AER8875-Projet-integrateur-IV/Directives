@@ -22,3 +22,5 @@ Contient les directives pour le code, strucutre de projet... pour uniformiser le
 
 - Pour le nom des macros, utiliser la notation snake_case en majuscule : **`NOM_MACRO`**
   - Commencer le nom de la macro avec un nom general du software , ensuite le namespace et finalement le nom de la macro : **`EULER_SOLVER_NOM_MACRO`**
+- Préférer le plus possible l'utilisation des pointeur intelligent **`std::unique_ptr/shared_ptr`**  sur les pointeur à la C (**`new/delete`**)
+- Préférer le plus possible de passer les arguments d'une foncton par **`const &`** au lieu de  passer les arguments par valeur
