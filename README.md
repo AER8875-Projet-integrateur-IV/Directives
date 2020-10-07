@@ -6,6 +6,7 @@ Contient les directives pour le code, strucutre de projet... pour uniformiser le
 - Commenter bien les header file,  le lecteur est interessé par l'interface de classe/structure plus que par les détails d'implémentaton (fichier .cpp)
 - L'utilisation des directives **`using`** est interdite dans le header file
 - Préférence de ne pas dépasser 80 caractères par ligne
+- Importer seulement les entités à utiliser au lieu d'importer un namespace au complet (ex :**`using std::cout`** ou lieu de **`using namespace std`**  ), sauf necéssaire 
 - Utiliser tab pour identation, pas des espaces
 - Utiliser toujours des accolades pour boucles if else while meme s'il s'agit d'une seule ligne
 - Nommer les fonctons avec la notation PascalCase  : ex **`NomFonction`**
