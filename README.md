@@ -4,6 +4,7 @@ Contient les directives pour le code, strucutre de projet... pour uniformiser le
 ### Conventions de programmation :
 - Utiliser les extensions **`.cpp`** et **`.hpp`** pour les fichiers C++
 - Commenter bien les header file,  le lecteur est interessé par l'interface de classe/structure plus que par les détails d'implémentaton (fichier .cpp)
+- L'utilisation des directives **`using`** est interdite dans le header file
 - Préférence de ne pas dépasser 80 caractères par ligne
 - Utiliser tab pour identation, pas des espaces
 - Utiliser toujours des accolades pour boucles if else while meme s'il s'agit d'une seule ligne
